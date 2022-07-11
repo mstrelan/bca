@@ -1,0 +1,9 @@
+{
+    "name": "drupal/bca",
+    "description": "Allows using annotations to define bundle classes",
+    "type": "drupal-module",
+    "require": {
+        "php": ">=8.0",
+        "drupal/core": "^9 || ^10"
+    }
+}

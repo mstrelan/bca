@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_entity_bundle_info_alter().
+ */
+function bca_entity_bundle_info_alter(&$bundles) {
+  /** @var \Drupal\bca\BundlePluginManager $manager */
+  $manager = \Drupal::service('plugin.manager.bca.bundle');
+  $definitions = $manager->getDefinitions();
+  foreach ($definitions as $definition) {
+    $bundle =& $bundles[$definition['entity_type']][$definition['bundle']];
+    if (!isset($bundle)) {
+      continue;
+    }
+    $bundle += $definition;
+  }
+}
