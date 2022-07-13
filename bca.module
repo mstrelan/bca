@@ -8,10 +8,9 @@ function bca_entity_bundle_info_alter(&$bundles) {
   $manager = \Drupal::service('plugin.manager.bca.bundle');
   $definitions = $manager->getDefinitions();
   foreach ($definitions as $definition) {
-    $bundle =& $bundles[$definition['entity_type']][$definition['bundle']];
-    if (!isset($bundle)) {
+    if (!isset($bundles[$definition['entity_type']][$definition['bundle']])) {
       continue;
     }
-    $bundle += $definition;
+    $bundles[$definition['entity_type']][$definition['bundle']] += $definition;
   }
 }
