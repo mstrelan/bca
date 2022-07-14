@@ -1,4 +1,4 @@
-name: Bundle Class Annotations
+name: Bundle Class Attributes
 type: module
-description: Allows using annotations to define bundle classes
-core_version_requirement: ^9
+description: Allows using attributes to define bundle classes
+core_version_requirement: ^10

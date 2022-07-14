@@ -29,9 +29,9 @@ class EntityBundleTest extends KernelTestBase {
   ];
 
   /**
-   * Test bundle class defined with annotations.
+   * Test bundle class defined with attributes.
    */
-  public function testBundleClassAnnotations(): void {
+  public function testBundleClassAttributes(): void {
     entity_test_create_bundle('bca_test_bundle');
     $entity = EntityTest::create(['type' => 'bca_test_bundle']);
     $this->assertInstanceOf(BcaTestBundle::class, $entity);
