@@ -34,6 +34,14 @@ class Bundle extends Plugin {
    */
   public $label;
 
+  /**
+   * {@inheritdoc}
+   */
+  protected function parse(array $values): array {
+    $values = parent::parse($values);
+    $values['bundle'] ??= $values['entity_type'];
+    return $values;
+  }
 
   /**
    * {@inheritdoc}
