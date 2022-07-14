@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\bca\Annotation;
 
 use Drupal\Component\Annotation\Plugin;
+use Drupal\Core\Annotation\Translation;
 
 /**
  * Defines bundle annotation object.
@@ -13,26 +16,20 @@ class Bundle extends Plugin {
 
   /**
    * The entity type.
-   *
-   * @var string
    */
-  public $entity_type;
+  public string $entity_type;
 
   /**
    * The bundle name.
-   *
-   * @var string
    */
-  public $bundle;
+  public string $bundle;
 
   /**
    * The human-readable name of the bundle.
    *
-   * @var \Drupal\Core\Annotation\Translation
-   *
    * @ingroup plugin_translatable
    */
-  public $label;
+  public Translation $label;
 
   /**
    * {@inheritdoc}
@@ -46,7 +43,7 @@ class Bundle extends Plugin {
   /**
    * {@inheritdoc}
    */
-  public function getId() {
+  public function getId(): string {
     return $this->definition['entity_type'] . ':' . $this->definition['bundle'];
   }
 

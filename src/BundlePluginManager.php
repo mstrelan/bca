@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\bca;
 
 use Drupal\Core\Cache\CacheBackendInterface;
@@ -22,6 +24,7 @@ class BundlePluginManager extends DefaultPluginManager {
       'Drupal\Core\Entity\EntityInterface',
       'Drupal\bca\Annotation\Bundle'
     );
+    $this->setCacheBackend($cache_backend, 'bca_bundle_classes');
   }
 
 }
